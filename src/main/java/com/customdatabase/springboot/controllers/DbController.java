@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
-public class DbController<T>{
-
+@RequestMapping(path = "/db")
+public class DbController{
 
     @Autowired
     private DbService dbService;

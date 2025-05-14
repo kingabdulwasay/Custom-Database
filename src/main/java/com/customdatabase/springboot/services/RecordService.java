@@ -1,15 +1,12 @@
 package com.customdatabase.springboot.services;
 
 import com.customdatabase.springboot.dtos.DatabaseDTO;
-import com.customdatabase.springboot.dtos.TableDTO;
 import com.customdatabase.springboot.entities.DbEntity;
 import com.customdatabase.springboot.repositories.DbRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 public class RecordService {
