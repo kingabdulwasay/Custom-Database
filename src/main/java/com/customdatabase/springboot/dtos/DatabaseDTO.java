@@ -15,6 +15,11 @@ public class DatabaseDTO {
         tables = new HashMap<>();
     }
 
+    public void setTables(HashMap<String, TableDTO> tables) {
+        this.tables = tables;
+    }
+
+
 
     public String getDbName() {
         return dbName;

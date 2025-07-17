@@ -10,16 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/record")
 public class RecordController {
 
     @Autowired
     private RecordService recordService;
-    @PostMapping(path = "/add/{db}/{table}")
-    public String addData(@PathVariable("db") String db, @PathVariable("table") String table, @RequestBody RecordDTO recordDTO)throws JsonProcessingException {
-        return recordService.addRecord(db, table, recordDTO.getData());
+    @PostMapping(path = "/add")
+    public String addData(@RequestBody RecordDTO recordDTO)throws JsonProcessingException {
+        return recordService.addRecord(recordDTO);
+    }
+    @GetMapping(path = "/get/{db}/{table}")
+    public ArrayList<Object> getRecord(@PathVariable("db") String db, @PathVariable("table") String table) throws JsonProcessingException {
+        return recordService.getRecord(db, table);
     }
 
 }

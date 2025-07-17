@@ -10,16 +10,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/table")
 public class TableController {
     @Autowired
     private TableService tableService;
-    @PostMapping(path = "/add/{db}")
-    public String addTable(@PathVariable("db") String database, @RequestBody TableDTO tableDTO) throws JsonProcessingException {
-        return tableService.addTables(database, tableDTO.getTable());
+    @PostMapping(path = "/add")
+    public String addTable(@RequestBody TableDTO tableDTO) throws JsonProcessingException {
+        return tableService.addTables(tableDTO.getDb(), tableDTO.getTable());
+    }
+
+    @GetMapping(path = "/get/{db}")
+    public HashMap<String, TableDTO> getTables(@PathVariable("db") String db) throws JsonProcessingException {
+        return tableService.getTables(db);
+    }
+
+    @DeleteMapping(path = "/delete/{db}/{table}")
+    public String deleteTable(@PathVariable("db") String db, @PathVariable("table") String table) throws JsonProcessingException {
+        return tableService.deleteTable(db, table);
     }
 
 }

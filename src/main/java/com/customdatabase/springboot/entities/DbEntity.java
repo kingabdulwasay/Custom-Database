@@ -14,6 +14,8 @@ public class DbEntity {
         return dbName;
     }
 
+    private String username;
+
     private String dbName;
     @Lob
     public String database;
@@ -21,7 +23,9 @@ public class DbEntity {
     public DbEntity() {
 
     }
-    public DbEntity(String dbName, String database) {
+
+    public DbEntity( String username, String dbName, String database) {
+        this.username = username;
         this.dbName = dbName;
         this.database = database;
     }
@@ -30,16 +34,24 @@ public class DbEntity {
         return id;
     }
 
-    public String getDatabase() {
-        return database;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void setDbName(String dbName) {
         this.dbName = dbName;
+    }
+
+    public String getDatabase() {
+        return database;
     }
 
     public void setDatabase(String database) {
