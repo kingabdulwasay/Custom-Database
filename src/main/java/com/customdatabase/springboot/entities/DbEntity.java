@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class DbEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
+    private Long id;
 
     public String getDbName() {
         return dbName;

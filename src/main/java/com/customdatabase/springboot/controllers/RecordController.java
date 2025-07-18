@@ -1,10 +1,7 @@
 package com.customdatabase.springboot.controllers;
 
-import com.customdatabase.springboot.dtos.DatabaseDTO;
 import com.customdatabase.springboot.dtos.RecordDTO;
-import com.customdatabase.springboot.services.DbService;
 import com.customdatabase.springboot.services.RecordService;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

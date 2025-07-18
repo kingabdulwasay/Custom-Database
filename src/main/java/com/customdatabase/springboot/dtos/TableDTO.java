@@ -1,7 +1,5 @@
 package com.customdatabase.springboot.dtos;
 
-import jakarta.persistence.Table;
-
 import java.util.ArrayList;
 
 public class TableDTO {

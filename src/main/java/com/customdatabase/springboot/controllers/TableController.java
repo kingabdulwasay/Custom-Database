@@ -8,10 +8,9 @@ import jakarta.persistence.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.Map;
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/table")
